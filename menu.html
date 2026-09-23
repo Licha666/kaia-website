@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu · KAIA — Authentic Georgian Restaurant, Barcelona</title>
+  <meta name="description" content="The full KAIA menu — khachapuri, khinkali, soups, grill, desserts and qvevri wines. Search and filter by category and price." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127863;</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header scrolled">
+    <nav class="nav container">
+      <a class="brand" href="index.html">KAIA<span class="brand-geo">&#4313;&#4304;&#4312;&#4304;</span></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="index.html#visit">Visit</a></li>
+      </ul>
+      <a class="btn btn-small btn-wa nav-cta" href="https://wa.me/34669393813?text=Hello%20KAIA!%20I%27d%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.1 1.1z"/></svg><span>WhatsApp</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image:url('images/hero.jpg')" role="img" aria-label="Adjaruli khachapuri"></div>
+      <div class="page-hero-scrim"></div>
+      <div class="container page-hero-inner">
+        <p class="eyebrow reveal">KAIA &middot; Eixample, Barcelona</p>
+        <h1 class="reveal">The <em>Menu</em></h1>
+        <p class="reveal">Search a craving, filter by category or price, and tap a category bar to open it.</p>
+      </div>
+    </section>
+
+    <!-- ============ MENU TOOLS ============ -->
+    <div class="menu-tools">
+      <div class="container">
+        <div class="search-wrap reveal">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
+          </svg>
+          <input type="search" id="menu-search" placeholder="Search dishes&hellip; e.g. khachapuri, cheese, soup" aria-label="Search dishes" />
+        </div>
+        <div class="filter-row reveal">
+          <div class="cat-chips" id="cat-chips" role="group" aria-label="Filter by category"></div>
+          <select id="price-filter" class="price-select" aria-label="Filter by price">
+            <option value="any">Any price</option>
+            <option value="under10">Under &euro;10</option>
+            <option value="mid">&euro;10 &ndash; &euro;14</option>
+            <option value="over15">&euro;15 &amp; over</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ MENU LIST ============ -->
+    <section class="section menu-section">
+      <div class="container">
+        <p class="results-count" id="results-count"></p>
+        <div id="menu-list"></div>
+        <div class="menu-empty" id="menu-empty" hidden>
+          <p>No dishes match your search.</p>
+          <button class="btn btn-ghost" id="clear-filters" type="button">Clear filters</button>
+        </div>
+        <p class="menu-note reveal">Dish names and prices are samples &mdash; confirm the current menu on WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- ============ CTA BAND ============ -->
+    <section class="section section-alt">
+      <div class="container cta-inner reveal">
+        <h2>Questions about <em>today&rsquo;s specials?</em></h2>
+        <p>Message us on WhatsApp &mdash; we reply fast.</p>
+        <a class="btn btn-wa" href="https://wa.me/34669393813?text=Hello%20KAIA!%20What%27s%20on%20today%27s%20menu%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.1 1.1z"/></svg><span>Ask about today&rsquo;s menu</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">KAIA<span class="brand-geo">&#4313;&#4304;&#4312;&#4304;</span></a>
+        <p class="footer-tag">Authentic Georgian cuisine &middot; Eixample, Barcelona</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="index.html#visit">Visit</a></li>
+      </ul>
+      <div class="footer-contact">
+        <a href="tel:+34669393813">+34 669 39 38 13</a>
+        <a href="https://instagram.com/kaia.bcn" target="_blank" rel="noopener">Instagram &middot; @kaia.bcn</a>
+        <p>Carrer de Mallorca, 246 &middot; 08008 Barcelona</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> KAIA Barcelona. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>
