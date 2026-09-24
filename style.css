@@ -101,7 +101,7 @@ h3 { font-size: 1.5rem; }
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url("images/hero.jpg") center 32% / cover no-repeat;
+  background: url("hero.jpg") center 32% / cover no-repeat;
   transform: scale(1.04);
   animation: heroDrift 18s ease-in-out infinite alternate;
 }

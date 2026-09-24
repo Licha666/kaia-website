@@ -94,7 +94,7 @@
   /* ---------- dish card (wide list row) ---------- */
   function cardHTML(i) {
     var media = i.img
-      ? '<div class="mi-media"><img src="images/' + i.img + '" alt="' + i.name + '" loading="lazy"></div>'
+      ? '<div class="mi-media"><img src="' + i.img + '" alt="' + i.name + '" loading="lazy"></div>'
       : '<div class="mi-media mi-ph" aria-hidden="true">' + (i.emoji || "🍽️") + '</div>';
     var veg = i.veg ? '<span class="chip chip-veg">Vegetarian</span>' : "";
     return '<article class="menu-item">' + media +
